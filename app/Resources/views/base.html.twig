@@ -1,0 +1,71 @@
+<!-- app/Resources/views/base.html.twig -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html"
+    ; charset=utf-8" />
+    <title>{% block title %}symblog{% endblock %} - symblog</title>
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    {% block stylesheets %}
+        <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic'
+              rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic'
+              rel='stylesheet' type='text/css'>
+        <link href="{{ asset('css/screen.css') }}" type="text/css" rel="stylesheet"/>
+        <link href="{{ asset('css/bootstrap.min.css') }}" type="text/css" rel="stylesheet"/>
+        <link href="{{ asset('css/bootstrap-responsive.min.css') }}" type="text/css" rel="stylesheet"/>
+
+    {% endblock %}
+    <link rel="shortcut icon" href="{{ asset('favicon.ico') }}"/>
+</head>
+<body>
+
+<section id="wrapper">
+    <header id="header">
+        <div class="top">
+            {% block navigation %}
+                <div class="navbar">
+                    <div class="navbar-inner">
+                        <a class="brand" href="#">Symblog</a>
+                        <ul class="nav">
+                            <li class="active"><a href="#">Home</a></li>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                        <!-- Future approch
+                        <form class="navbar-search pull-left">
+                            <input type="text" class="search-query" placeholder="Search">
+                        </form>
+                        -->
+                    </div>
+                    </div>
+
+            {% endblock %}
+        </div>
+
+        <hgroup>
+            <h2>{% block blog_title %}<a href="#">symblog</a>{% endblock %}</h2>
+
+            <h3>{% block blog_tagline %}<a href="#">creating a blog in Symfony2</a>{% endblock %}</h3>
+        </hgroup>
+    </header>
+
+    <section class="main-col">
+        {% block body %}{% endblock %}
+    </section>
+    <aside class="sidebar">
+        {% block sidebar %}{% endblock %}
+    </aside>
+
+    <div id="footer">
+        {% block footer %}
+            Symfony2 blog tutorial - created by <a href="https://github.com/Shibly">Shibly</a>
+        {% endblock %}
+    </div>
+</section>
+
+{% block javascripts %}{% endblock %}
+</body>
+</html>
