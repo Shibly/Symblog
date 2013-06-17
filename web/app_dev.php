@@ -1,5 +1,6 @@
 <?php
 umask(0000);
+date_default_timezone_set('Asia/Dhaka');
 use Symfony\Component\HttpFoundation\Request;
 
 // If you don't want to setup permissions the proper way, just uncomment the following PHP line

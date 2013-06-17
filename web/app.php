@@ -1,5 +1,5 @@
 <?php
-
+date_default_timezone_set('Asia/Dhaka');
 use Symfony\Component\ClassLoader\ApcClassLoader;
 use Symfony\Component\HttpFoundation\Request;
 
